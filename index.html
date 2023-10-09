@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WbiteEX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="header">
+                <img src="./img/logo.png" alt="logo" class="logo">
+                <div class="nav">
+                    <ul class="listlink">
+                        <li><a href="#codeCheckForm" class="navlink">Взяти участь</a></li>
+                        <li><a href="#aboutpromotion" class="navlink">Умови акції</a></li>
+                        <li><a href="#aboutcard" class="navlink">Про WhiteEX</a></li>
+                        <li><a href="#whitebit" class="navlink">Про WhiteBIT</a></li>
+                        <li><a href="#wherebuy" class="navlink gr">Де купити</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="firstsection">
+        <div class="wrapper">
+            <div class="first-block">
+                <div class="info">
+                    <div class="cashback">
+                        Сashback від WhiteEX!
+                    </div>
+                    <div class="remuneration">
+                        <span class="remuneration-st">Є картка</span> WhiteEX?<br>
+                        <span class="remuneration-st">Є шанс</span> на винагороду!
+                    </div>
+                    <div class="checkcodeblock">
+                        <a href="#codeCheckForm" class="checkcode">ПЕРЕВІРИТИ КОД</a>
+                    </div>
+                </div>
+                <div class="exblock">
+                    <img src="./img/moneybox.png" alt="moneybox" class="moneybox">
+                </div>
+            </div>
+            <img src="./img/scroll.png" alt="icon scroll" class="iconscroll">
+            <div class="form">
+                <form id="codeCheckForm">
+                    <div class="codeform">
+                            <input type="text" class="forminput" placeholder="Ім’я" id="name" required>
+                        <input type="email" class="forminput" placeholder="E-mail" id="email" required>
+                        <div class="select-wrapper">
+                            <select class="forminput select" id="partner" required> 
+                                <option disabled="disabled" selected="selected">Партнер, у якого було придбано код</option>
+                            </select>
+                        </div>
+                        <div class="select-wrapper">
+                            <select class="forminput select" id="region" required> 
+                                <option disabled="disabled" selected="selected">Область, в якій було придбано код</option>
+                            </select>
+                        </div>
+                        <input type="text" class="forminput" placeholder="Код" id="code" required>
+                        <div class="personal">
+                            <input type="checkbox" name="personaldata" class="personaldata" required>Даю згоду на обробку моїх персональних даних
+                        </div>
+                        
+                    </div>
+                    <button type="submit" class="result" onClick="checkCode();" id="open-modal-btn">РЕЗУЛЬТАТ</button>
+                </form>
+            </div>
+            <div class="modal" id="my-modal">
+                <div class="modal_box">
+                    <button id="close-my-modal-btn" class="modal-close-btn"><img src="./img/Х.png" alt=""></button>
+                    <img src="./img/lose.png" alt="">
+                    <h3>На жаль, твій код не є виграшним.</h3>
+                    <p>Але не засмучуйся, адже тобі може пощастити наступного разу!</p>
+                </div>
+            </div>
+
+            <div class="modalsecond" id="my-modalsecond">
+                <div class="modal_boxsecond">
+                    <button id="close-my-modal-btnsecond" class="modal-close-btnsecond"><img src="./img/Х.png" alt=""></button>
+                    <img src="./img/win.png" alt="">
+                    <h3>Вітаємо з винагородою!</h3>
+                    <h4>Виграний номінал: <span id="denomination"></span></h4>
+                    <h5>Код попвнення: <span id="code"></span></h5>
+                    <p>Здається, тобі щастить, тож повертайся та вигравай ще</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="secondsection" id="aboutpromotion">
+        <div class="secondsectionbg">
+            <div class="wrapper">
+                <div class="aboutpromotion">
+                    <div class="promotiontitle">
+                        Що треба знати <br>
+                        про акцію?
+                    </div>
+                    <div class="about">
+                        Кожен, хто купив картку WhiteEX, має можливість отримати грошову винагороду (від 1 до 100 USDT). Ось, як це працює:
+                    </div>
+                    <div class="promotionblock">
+                        <div class="promotioninfo">
+                            <div class="promotionimg"><img src="./img/card.png" alt=""></div>
+                            <div class="promotiontxt">
+                                Придбай картку WhiteEX у будь-якому <br> з магазинів наших партнерів. В акції беруть участь всі номінали карток, але від них залежить розмір потенційного кешбека.
+                            </div>
+                        </div>
+                        <div class="promotioninfo2">
+                            <div class="promotionimg1"><img src="./img/code.png" alt=""></div>
+                            <div class="promotiontxt1">
+                                Введи свій WhiteBIT-код з картки на сайті <span>cashback.whiteex.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promotioncode">
+                        Система миттєво перевірить твій код та сповістить, чи є він виграшним. <br class="br"> У випадку, якщо тобі пощастило, код з призом буде згенерований автоматично.
+                    </div>
+                    <div class="promotionterm">
+                        <div class="promotiontermicon">
+                            <img src="./img/smallicon.png" alt="">
+                        </div>
+                        <div class="promotiontermtxt">
+                            Акція проходитиме з 1 жовтня по 31 грудня (її може бути подовжено). Щомісячний призовий фонд — 500 USDT.
+                        </div>
+                    </div>
+                    <div class="moredetailsblock">
+                        <a href="" class="moredetails">ДЕТАЛЬНІШЕ</a>
+                    </div>
+                    <div class="promotionterm media">
+                        <div class="promotiontermicon">
+                            <img src="./img/smallicon.png" alt="">
+                        </div>
+                        <div class="promotiontermtxt">
+                            Акція проходитиме з 1 жовтня по 31 грудня (її може бути подовжено). Щомісячний призовий фонд — 500 USDT.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="thirdsection" id="aboutcard">
+        <div class="wrapper">
+            <div class="aboutcard">
+                <div class="carddesc">
+                    <div class="cardimg media1">
+                        <div class="over">
+                            <img src="./img/cards.png" alt="">
+                        </div>
+                    </div>
+                    <div class="cardtitle">
+                        <span>Що таке <br class="br"></span> картка WhiteEX?
+                    </div>
+                    <div class="cardtxt">
+                        Це простий та безпечний <br class="br"> спосіб купити криптовалюту <br> та поповнити свій баланс на біржі WhiteBIT. Картки існують <br> в електронній та фізичній формі. Їх можна придбати на сайті WhiteEX або в магазинах партнерів.
+                    </div>
+                    <div class="cardimg">
+                        <img src="./img/cards.png" alt="">
+                    </div>
+                </div>
+                <div class="cardblocks">
+                    <div class="cardblockflex">
+                        <div class="cardblock">
+                            <img src="./img/iconfirst.png" alt="" class="cardblockimg">
+                            <div class="cardblocktxt">
+                                100+ точок <br> продажу в Україні
+                            </div>
+                        </div>
+                        <div class="cardblock">
+                            <img src="./img/iconsecond.png" alt="" class="cardblockimg">
+                            <div class="cardblocktxt">
+                                Картки з UAH <br> та USDT
+                            </div>
+                        </div>
+                        <div class="cardblock">
+                            <img src="./img/iconthird.png" alt="" class="cardblockimg">
+                            <div class="cardblocktxt">
+                                3 ступені захисту
+                            </div>
+                        </div>
+                        <div class="cardblock">
+                            <img src="./img/iconfourth.png" alt="" class="cardblockimg">
+                            <div class="cardblocktxt">
+                                Подарунок <br> нового формату
+                            </div>
+                        </div>
+                        <div class="cardblock b1">
+                            <img src="./img/iconfifth.png" alt="" class="cardblockimg">
+                            <div class="cardblocktxt">
+                                Унікальний 38-значний <br> WhiteBIT-код
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="fourthsection" id="whitebit">
+        <div class="fourthsectionbg">
+            <div class="wrapper">
+                <div class="whitebit">
+                    <div class="whitebittxt">
+                        <div class="whitebittxth">
+                            Що таке <span>WhiteBIT?</span>
+                        </div>
+                        <div class="whitebitdesc">
+                            <a href="https://whitebit.com/">Whitebit</a> – найбільша європейська криптовалютна біржа родом з України.
+                        </div>
+                        <div class="whitebitabout">
+                            Це безпечна, зрозуміла та проста у використанні платформа, що має на меті поширювати блокчейн-технології <br> та розвивати криптоспільноту.
+                        </div>
+                    </div>
+                    <div class="whitebitimg">
+                        <img src="./img/laptop.png" alt="">
+                    </div>
+                </div>
+                <div class="whitebitcharacteristics">
+                    <div class="whitebitcharacteristicsblock border">
+                        <div class="whitebitcharacteristicsblockh">
+                            ТОП-2
+                        </div>
+                        <div class="whitebitcharacteristicsblocktxt border1">
+                            у світі за рівнем <br class="dr"> безпеки cer.live
+                        </div>
+                    </div>
+                    <div class="whitebitcharacteristicsblock border">
+                        <div class="whitebitcharacteristicsblockh">
+                            4 млн
+                        </div>
+                        <div class="whitebitcharacteristicsblocktxt border1">
+                            користувачів <br> по всьому світу
+                        </div>
+                    </div>
+                    <div class="whitebitcharacteristicsblock border">
+                        <div class="whitebitcharacteristicsblockh">
+                            100 000
+                        </div>
+                        <div class="whitebitcharacteristicsblocktxt border1">
+                            транзакцій <br class="dr"> за <br class="br"> секунду
+                        </div>
+                    </div>
+                    <div class="whitebitcharacteristicsblock">
+                        <div class="whitebitcharacteristicsblockh">
+                            1 млрд
+                        </div>
+                        <div class="whitebitcharacteristicsblocktxt">
+                            середній добовий <br> обʼєм торгів
+                        </div>
+                    </div>
+                </div>
+                <img src="./img/logowb.png" alt="" class="whitebitlogo">
+            </div>
+        </div>
+        
+    </section>
+    <section class="fifthsection" id="wherebuy">
+        <div class="wrapper">
+            <div class="fifthsectiontxt">
+                <div class="fifthsectiontxth">
+                   <span>Де придбати</span> <br> картки WhiteEX?
+                </div>
+                <div class="fifthsectiontxtdesc">
+                    Наші картки вже чекають на <br class="br"> тебе <br class="dr"> в магазинах наших партнерів. Обирай найзручнішу <br> локацію та починай шлях до винагороди!
+                </div>
+            </div>
+            <div class="map-screen-wrapper">
+                <div class="mapblock">
+                    <div class="pp">
+                        <iframe 
+                           src="https://www.google.com/maps/d/u/0/embed?mid=1Nv22ST_DDENgDcParcq5TD4_xDEV9Pw&ehbc=2E312F&noprof=1"
+        
+                           frameborder="0"
+                           style="border:0; margin-top: -50px;" class="map">
+                        </iframe>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="wrapper">
+            <div class="footer">
+                <p class="footerlink media">
+                    <a href="/WhiteEx_website_privacy_policy_uk.pdf" target="_blank" class="footerlinka">Політика конфіденційності</a> <br class="dr">
+                    <a href="/Whiteex_offer_24_11_2022.pdf" target="_blank" class="footerlinkamedia">Договір оферти</a>
+                </p>
+                <img src="./img/logo.png" alt="logo" class="logo">
+                <div class="protected">
+                    2023 © WhiteEX — усі права захищено
+                </div>
+                <p class="footerlink">
+                    <a href="/WhiteEx_website_privacy_policy_uk.pdf" target="_blank" class="footerlinka">Політика конфіденційності</a>
+                    <a href="/Whiteex_offer_24_11_2022.pdf" target="_blank">Договір оферти</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-overlay">
+        <div class="cookiealert" id="cookiealert">
+            Ми використовуємо файли cookie, щоб забезпечити тобі найкращий досвід роботи на веб-сайті.
+            <button id="accept-cookie" class="btn-acceptcookies">Прийняти</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
